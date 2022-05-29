@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:weightSum="7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:weightSum="7">
+
+        <TextView
+            android:id="@+id/textViewPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:text="@string/player" />
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3.6"
+            android:progress="100"
+            android:progressTint="#95FF00" />
+
+        <TextView
+            android:id="@+id/textViewScore"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.9"
+            android:gravity="center"
+            android:text="@string/score" />
+
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/game"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+
+            android:id="@+id/linearLayout"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="40dp"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageButton
+
+                android:id="@+id/buttonSuccess"
+                style="@style/ImageButtonStyle"
+                android:contentDescription="@string/success"
+                android:onClick="onClickSuccess"
+                android:src="@drawable/ic_baseline_contact_support_24" />
+
+            <ImageButton
+                android:id="@+id/buttonTurn"
+                style="@style/ImageButtonStyle"
+                android:contentDescription="@string/turn"
+                android:onClick="onClickTurn"
+                android:src="@drawable/ic_baseline_autorenew_24" />
+
+            <ImageButton
+                android:id="@+id/buttonRestart"
+                style="@style/ImageButtonStyle"
+                android:contentDescription="@string/new_game"
+                android:onClick="onClickRestart"
+                android:src="@drawable/ic_baseline_refresh_24" />
+
+            <ImageButton
+                android:id="@+id/buttonPause"
+                style="@style/ImageButtonStyle"
+                android:contentDescription="@string/pause"
+                android:onClick="onClickPause"
+                android:src="@drawable/ic_baseline_pause_circle_outline_24" />
+
+            <ImageButton
+                android:id="@+id/buttonExit"
+                style="@style/ImageButtonStyle"
+                android:contentDescription="@string/exit"
+                android:onClick="onClickExit"
+                android:src="@drawable/ic_baseline_exit_to_app_24" />
+
+
+        </LinearLayout>
+
+        <GridLayout
+            android:id="@+id/gridGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:columnCount="13"
+            android:rowCount="6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
