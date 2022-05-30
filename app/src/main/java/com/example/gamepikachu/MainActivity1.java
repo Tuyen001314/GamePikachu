@@ -117,7 +117,7 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
 //        a.start();
 
 
-        CountDownTimer countDownTimer = new CountDownTimer(100000, 1000) {
+        CountDownTimer countDownTimer = new CountDownTimer(300000, 3000) {
             @Override
             public void onTick(long l) {
                 int count = progressBar.getProgress();
@@ -231,7 +231,6 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
     }
     public void execute(Point p1, Point p2) {
         System.out.println("delete");
-
         setDisable(arrayImageButton[p1.x][p1.y]);
         setDisable(arrayImageButton[p2.x][p2.y]);
 
@@ -253,12 +252,11 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
             arrayImageButton[p2.x][p2.y].setBackgroundResource(R.drawable.border_button);
 
         }
-        else algorithm.turnMatrix();
+        else {
+            turn();
+        }
     }
-    int time = 0;
-
-    public void onClickTurn(View view) {
-
+    public void turn() {
         algorithm.turnMatrix();
         gridLayout.removeAllViews();
 
@@ -301,6 +299,9 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
                 }
             }
         }
+    }
+    public void onClickTurn(View view) {
+        turn();
     }
 
     private void changeProcessbar(int time) {

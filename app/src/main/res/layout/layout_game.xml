@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FEF7FF"
     android:layout_margin="5dp"
     android:weightSum="7">
 
@@ -75,6 +76,7 @@
 
                 android:id="@+id/buttonSuccess"
                 style="@style/ImageButtonStyle"
+                android:background="@drawable/edt_custom"
                 android:contentDescription="@string/success"
                 android:onClick="onClickSuccess"
                 android:src="@drawable/ic_baseline_contact_support_24" />
@@ -83,6 +85,7 @@
                 android:id="@+id/buttonTurn"
                 style="@style/ImageButtonStyle"
                 android:contentDescription="@string/turn"
+                android:background="@drawable/edt_custom"
                 android:onClick="onClickTurn"
                 android:src="@drawable/ic_baseline_autorenew_24" />
 
@@ -90,6 +93,7 @@
                 android:id="@+id/buttonRestart"
                 style="@style/ImageButtonStyle"
                 android:contentDescription="@string/new_game"
+                android:background="@drawable/edt_custom"
                 android:onClick="onClickRestart"
                 android:src="@drawable/ic_baseline_refresh_24" />
 
@@ -97,6 +101,7 @@
                 android:id="@+id/buttonPause"
                 style="@style/ImageButtonStyle"
                 android:contentDescription="@string/pause"
+                android:background="@drawable/edt_custom"
                 android:onClick="onClickPause"
                 android:src="@drawable/ic_baseline_pause_circle_outline_24" />
 
@@ -105,6 +110,7 @@
                 style="@style/ImageButtonStyle"
                 android:contentDescription="@string/exit"
                 android:onClick="onClickExit"
+                android:background="@drawable/edt_custom"
                 android:src="@drawable/ic_baseline_exit_to_app_24" />
 
 

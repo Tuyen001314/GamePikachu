@@ -77,8 +77,7 @@ public class Controller {
         ArrayList<Point> listPoint = new ArrayList<Point>();  // tạo list
         for (int i = 1; i < row - 1; i++) {
             for (int j = 1; j < col - 1; j++)
-                if(matrix[i][j] != 0)
-                {
+                if(matrix[i][j] != 0) {
                     listPoint.add(new Point(i, j));       // thêm điểm mới vào list
                 }
         }
@@ -103,13 +102,10 @@ public class Controller {
 
     }
     public String showMatrix() {
-        for(int i = 0; i < row ; i++)
-        {
+        for(int i = 0; i < row ; i++) {
             for(int j = 0; j < col ; j++)
-                if(i > 0 && i < row - 1 && j < col - 1 && j > 0)
-                {
-                    if(matrix[i][j] != -1)
-                    {
+                if(i > 0 && i < row - 1 && j < col - 1 && j > 0) {
+                    if(matrix[i][j] != -1) {
                         System.out.printf("%3d", matrix[i][j]);
                     }
                     else {
@@ -117,8 +113,7 @@ public class Controller {
                         System.out.printf("%3d", matrix[i][j]);
                     }
                 }
-                else
-                {
+                else {
                     matrix[i][j] = 0;
                     System.out.printf("%3d", matrix[i][j]);
                 }
@@ -135,57 +130,43 @@ public class Controller {
         int pLL = matrix[dx2][dy2];
         matrix[dx2][dy2] = 0;
         matrix[dx1][dy1] = -1;
-        while(!Q.isEmpty())
-        {
+        while(!Q.isEmpty()) {
             Data tmp = Q.peek();
             Q.remove();
-            for(int x = 0; x <= 3; x++)
-            {
+            for(int x = 0; x <= 3; x++) {
                 int dx = tmp.x + cd[x];
                 int dy = tmp.y + cc[x];
-                if(dx >= 0 && dy >= 0 && dx < row && dy < col && matrix[dx][dy] == 0)
-                {
-                    if(dx != dx2 || dy != dy2)
-                    {
+                if(dx >= 0 && dy >= 0 && dx < row && dy < col && matrix[dx][dy] == 0) {
+                    if(dx != dx2 || dy != dy2) {
                         matrix[dx][dy] = -1;
-                        if(dx != tmp.z && dy != tmp.t)
-                        {
+                        if(dx != tmp.z && dy != tmp.t) {
                             x = tmp.d+1;
                             Q.add(new Data(dx, dy, tmp.d+1, dx, dy));
                         }
-                        else
-                        {
+                        else {
                             x = tmp.d;
                             Q.add(new Data(dx, dy, tmp.d, tmp.z, tmp.t));
                         }
                     }
-                    else
-                    {
-                        if(dx != tmp.z && dy != tmp.t)
-                        {
+                    else {
+                        if(dx != tmp.z && dy != tmp.t) {
                             x = tmp.d+1;
                         }
-                        else
-                        {
+                        else {
                             x = tmp.d;
                         }
                         p = min(p, x);
-                        if(p <= 2)
-                        {
+                        if(p <= 2) {
                             matrix[dx1][dy1] = LL;
                             matrix[dx2][dy2] = pLL;
-                            for(int i = 0; i < row ; i++)
-                            {
+                            for(int i = 0; i < row ; i++) {
                                 for(int j = 0; j < col ; j++)
-                                    if(i > 0 && i < row - 1 && j < col - 1 && j > 0)
-                                    {
-                                        if(matrix[i][j] == -1)
-                                        {
+                                    if(i > 0 && i < row - 1 && j < col - 1 && j > 0) {
+                                        if(matrix[i][j] == -1) {
                                             matrix[i][j] = 0;
                                         }
                                     }
-                                    else
-                                    {
+                                    else {
                                         matrix[i][j] = 0;
                                     }
                             }
@@ -197,18 +178,14 @@ public class Controller {
         }
         matrix[dx1][dy1] = LL;
         matrix[dx2][dy2] = pLL;
-        for(int i = 0; i < row ; i++)
-        {
+        for(int i = 0; i < row ; i++) {
             for(int j = 0; j < col ; j++)
-                if(i > 0 && i < row - 1 && j < col - 1 && j > 0)
-                {
-                    if(matrix[i][j] == -1)
-                    {
+                if(i > 0 && i < row - 1 && j < col - 1 && j > 0) {
+                    if(matrix[i][j] == -1) {
                         matrix[i][j] = 0;
                     }
                 }
-                else
-                {
+                else {
                     matrix[i][j] = 0;;
                 }
         }
@@ -223,38 +200,29 @@ public class Controller {
         int pLL = matrix[dx2][dy2];
         matrix[dx2][dy2] = 0;
         matrix[dx1][dy1] = -1;
-        while(!Q.isEmpty())
-        {
+        while(!Q.isEmpty()) {
             Data tmp = Q.peek();
             Q.remove();
-            for(int i = 0; i <= 3; i++)
-            {
+            for(int i = 0; i <= 3; i++) {
                 int dx = tmp.x + cd[i];
                 int dy = tmp.y + cc[i];
-                if(dx >= 0 && dy >= 0 && dx < row && dy < col && matrix[dx][dy] == 0)
-                {
-                    if(dx != dx2 || dy != dy2)
-                    {
+                if(dx >= 0 && dy >= 0 && dx < row && dy < col && matrix[dx][dy] == 0) {
+                    if(dx != dx2 || dy != dy2) {
                         matrix[dx][dy] = -1;
-                        if(dx != tmp.z && dy != tmp.t)
-                        {
+                        if(dx != tmp.z && dy != tmp.t) {
                             x = tmp.d+1;
                             Q.add(new Data(dx, dy, tmp.d+1, dx, dy));
                         }
-                        else
-                        {
+                        else {
                             x = tmp.d;
                             Q.add(new Data(dx, dy, tmp.d, tmp.z, tmp.t));
                         }
                     }
-                    else
-                    {
-                        if(dx != tmp.z && dy != tmp.t)
-                        {
+                    else {
+                        if(dx != tmp.z && dy != tmp.t) {
                             x = tmp.d+1;
                         }
-                        else
-                        {
+                        else {
                             x = tmp.d;
                         }
                         p = min(p, x);
@@ -277,7 +245,7 @@ public class Controller {
         matrix = new int[row][col];
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++)
-                if(i == 0 || i == row - 1 || j == 0 || j == col - 1){
+                if(i == 0 || i == row - 1 || j == 0 || j == col - 1) {
                     matrix[i][j] = 0;
                 }
         }

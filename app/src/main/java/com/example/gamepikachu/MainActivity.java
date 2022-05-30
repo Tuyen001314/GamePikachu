@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
         edtName = findViewById(R.id.editTextUsername);
         edtPass = findViewById(R.id.editTextPassword);
 
-
-
     }
 
     public void clickBtnStart(View view) {
