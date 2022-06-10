@@ -6,18 +6,18 @@ import androidx.room.PrimaryKey;
 @Entity
 public class User {
 
-        @PrimaryKey
-        public int uid;
+        @PrimaryKey(autoGenerate = true)
+        public Integer uid;
 
-        @ColumnInfo(name = "first_name")
-        public String firstName;
+        @ColumnInfo(name = "name")
+        public String nameUser;
 
-        @ColumnInfo(name = "last_name")
-        public String lastName;
+        @ColumnInfo(name = "pass")
+        public String passUser;
 
-        public User(int uid, String firstName, String lastName) {
+        public User(Integer uid, String nameUser, String passUser) {
                 this.uid = uid;
-                this.firstName = firstName;
-                this.lastName = lastName;
+                this.nameUser = nameUser;
+                this.passUser = passUser;
         }
 }

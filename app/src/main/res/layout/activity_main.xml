@@ -103,7 +103,6 @@
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:backgroundTint="#AC792F"
-        android:onClick="clickBtnStart"
         android:text="@string/button_login"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
