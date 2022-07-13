@@ -1,5 +1,5 @@
 # Pikachu
-pikachu basic
+Classic game Pikachu 
 
 
 
